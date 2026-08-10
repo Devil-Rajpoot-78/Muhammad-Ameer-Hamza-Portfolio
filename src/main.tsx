@@ -3,7 +3,8 @@ import { createRoot } from 'react-dom/client';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Environment, Float, OrbitControls } from '@react-three/drei';
 import { motion } from 'framer-motion';
-import { ArrowDown, ArrowUpRight, Box, Cpu, Github, Mail, Menu, Play, X } from 'lucide-react';
+import { ArrowDown, ArrowUpRight, Box, Cpu, Mail, Menu, Play, X } from 'lucide-react';
+import type { Group } from 'three';
 import './styles.css';
 
 type Project={title:string; category:string; type:string; description:string; tags:string[]; featured?:boolean};
@@ -30,7 +31,7 @@ const projects:Project[]=[
  {title:'Interactive Engineering Playground',category:'Engineering',type:'Concept',description:'A planned interactive laboratory for communicating engineering ideas through simulation and visual interaction.',tags:['Simulation','Interaction','Engineering']}
 ];
 
-function Core(){const ref=useRef<THREE.Group>(null!);useFrame((s)=>{if(ref.current){ref.current.rotation.y=s.clock.elapsedTime*.18;ref.current.rotation.x=Math.sin(s.clock.elapsedTime*.35)*.08}});return <group ref={ref}><Float speed={1.2} rotationIntensity={.25} floatIntensity={.45}><mesh><icosahedronGeometry args={[1.65,2]}/><meshStandardMaterial color="#a9afb3" metalness={.78} roughness={.2} wireframe/></mesh><mesh scale={.74}><icosahedronGeometry args={[1.65,1]}/><meshStandardMaterial color="#181b1d" metalness={.65} roughness={.24}/></mesh><mesh rotation={[Math.PI/2,0,0]} scale={1.85}><torusGeometry args={[1.45,.025,12,96]}/><meshStandardMaterial color="#c7ccd0" metalness={.9} roughness={.18}/></mesh></Float></group>}
+function Core(){const ref=useRef<Group>(null!);useFrame((s)=>{if(ref.current){ref.current.rotation.y=s.clock.elapsedTime*.18;ref.current.rotation.x=Math.sin(s.clock.elapsedTime*.35)*.08}});return <group ref={ref}><Float speed={1.2} rotationIntensity={.25} floatIntensity={.45}><mesh><icosahedronGeometry args={[1.65,2]}/><meshStandardMaterial color="#a9afb3" metalness={.78} roughness={.2} wireframe/></mesh><mesh scale={.74}><icosahedronGeometry args={[1.65,1]}/><meshStandardMaterial color="#181b1d" metalness={.65} roughness={.24}/></mesh><mesh rotation={[Math.PI/2,0,0]} scale={1.85}><torusGeometry args={[1.45,.025,12,96]}/><meshStandardMaterial color="#c7ccd0" metalness={.9} roughness={.18}/></mesh></Float></group>}
 function Hero3D(){return <div className="hero-canvas" aria-hidden="true"><Canvas dpr={[1,1.5]} camera={{position:[0,0,5.7],fov:42}} gl={{antialias:true,powerPreference:'high-performance'}}><ambientLight intensity={.35}/><directionalLight position={[3,4,5]} intensity={4}/><pointLight position={[-3,-2,2]} intensity={2}/><Suspense fallback={null}><Core/><Environment preset="studio"/></Suspense><OrbitControls enableZoom={false} enablePan={false} autoRotate={false}/></Canvas></div>}
 function App(){const [filter,setFilter]=React.useState('ALL');const [menu,setMenu]=React.useState(false);const shown=filter==='ALL'?projects:projects.filter(p=>p.category.toUpperCase()===filter);return <div className="site">
  <header><a className="brand" href="#top"><span>MAH</span><small>CREATIVE TECHNOLOGY</small></a><nav className={menu?'open':''}>{['About','Projects','3D Lab','Engineering','Playground','Contact'].map(x=><a key={x} href={'#'+x.toLowerCase().replace(' ','-')} onClick={()=>setMenu(false)}>{x}</a>)}<a className="nav-contact" href="mailto:hamza207205@gmail.com">Start a project <ArrowUpRight size={15}/></a></nav><button className="menu" onClick={()=>setMenu(!menu)} aria-label="Toggle menu">{menu?<X/>:<Menu/>}</button></header>
