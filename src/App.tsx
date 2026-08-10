@@ -5,7 +5,7 @@ import './App.css';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/Muhammad-Ameer-Hamza-Portfolio">
       <LoadingScreen />
       <Navigation />
       <Layout>
