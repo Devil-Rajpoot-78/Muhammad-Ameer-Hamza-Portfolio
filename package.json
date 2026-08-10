@@ -5,7 +5,7 @@
   "type": "module",
   "description": "Interactive portfolio showcasing 3D, software, robotics, and AI projects",
   "author": "Muhammad Ameer Hamza",
-  "homepage": "https://github.com/Devil-Rajpoot-78/Muhammad-Ameer-Hamza-Portfolio",
+  "homepage": "https://devil-rajpoot-78.github.io/Muhammad-Ameer-Hamza-Portfolio/",
   "repository": {
     "type": "git",
     "url": "https://github.com/Devil-Rajpoot-78/Muhammad-Ameer-Hamza-Portfolio.git"
@@ -23,7 +23,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.16.0",
-    "three": "^r157",
+    "three": "0.157.0",
     "@react-three/fiber": "^8.13.0",
     "@react-three/drei": "^9.87.0",
     "zustand": "^4.4.0",
