@@ -25,16 +25,12 @@
     /* Path aliases */
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
       "@components/*": ["src/components/*"],
       "@pages/*": ["src/pages/*"],
-      "@sections/*": ["src/sections/*"],
-      "@three/*": ["src/three/*"],
       "@hooks/*": ["src/hooks/*"],
       "@utils/*": ["src/utils/*"],
-      "@data/*": ["src/data/*"],
       "@types/*": ["src/types/*"],
-      "@styles/*": ["src/styles/*"]
+      "@data/*": ["src/data/*"]
     }
   },
   "include": ["src"],
