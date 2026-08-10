@@ -1,24 +1,36 @@
-// Core profile types
-export interface Profile {
-  name: string;
-  title: string;
-  description: string;
-  email: string;
-  phone: string;
-  whatsapp: string;
-  github: string;
-  location?: string;
-  avatar?: string;
-}
+export type ProjectStatus = 'completed' | 'in-progress' | 'prototype' | 'experiment' | 'academic' | 'archived';
 
-// Project types
-export type ProjectStatus = 'completed' | 'in-progress' | 'prototype' | 'concept' | 'experiment' | 'open-source' | 'academic';
-export type ProjectCategory = 'all' | '3d' | 'blender' | 'animation' | 'automotive' | 'product-viz' | 'game-dev' | 'software' | 'android' | 'web' | 'robotics' | 'engineering' | 'ai' | 'experiments';
+export type ProjectCategory = 
+  | 'all'
+  | '3d'
+  | 'blender'
+  | 'animation'
+  | 'automotive'
+  | 'product-viz'
+  | 'game-dev'
+  | 'software'
+  | 'android'
+  | 'web'
+  | 'robotics'
+  | 'engineering'
+  | 'ai'
+  | 'experiments';
+
+export type Proficiency = 'beginner' | 'intermediate' | 'advanced' | 'expert';
+
+export type SkillCategory = '3D' | 'Graphics' | 'Web' | 'Animation' | 'Game Dev' | 'Software' | 'Mobile' | 'Robotics' | 'AI' | 'Tools';
+
+export type ExperienceType = 'project' | 'education' | 'work' | 'certification';
 
 export interface ProjectImage {
   url: string;
   alt: string;
-  caption?: string;
+}
+
+export interface ProjectLink {
+  label: string;
+  url: string;
+  type: 'github' | 'live' | 'dribbble' | 'behance' | 'youtube' | 'other';
 }
 
 export interface Project {
@@ -29,21 +41,25 @@ export interface Project {
   year: number;
   status: ProjectStatus;
   shortDescription: string;
-  fullDescription?: string;
+  fullDescription: string;
   technologies: string[];
   skills: string[];
-  featured: boolean;
+  featured?: boolean;
   images: ProjectImage[];
-  video?: string;
-  model3d?: string;
-  githubUrl?: string;
-  demoUrl?: string;
-  caseStudy?: string;
-  credits?: string;
-  license?: string;
+  links?: ProjectLink[];
+  highlights?: string[];
+  metrics?: {
+    label: string;
+    value: string;
+  }[];
 }
 
-// Experience types
+export interface Skill {
+  name: string;
+  category: SkillCategory;
+  proficiency: Proficiency;
+}
+
 export interface Experience {
   id: string;
   title: string;
@@ -52,18 +68,11 @@ export interface Experience {
   endDate?: string;
   description: string;
   skills: string[];
-  type: 'education' | 'work' | 'project';
+  type: ExperienceType;
+  highlights?: string[];
+  link?: string;
 }
 
-// Skill types
-export interface Skill {
-  name: string;
-  category: string;
-  proficiency: 'beginner' | 'intermediate' | 'advanced' | 'expert';
-  icon?: string;
-}
-
-// Contact form types
 export interface ContactFormData {
   name: string;
   email: string;
@@ -73,5 +82,3 @@ export interface ContactFormData {
   deadline?: string;
   message: string;
 }
-
-export type ProjectType = 'modeling' | 'animation' | 'product-viz' | 'automotive-viz' | 'interactive-3d' | 'game-dev' | 'software' | 'android' | 'web' | 'robotics' | 'engineering-viz' | 'ai-creative' | 'other';
