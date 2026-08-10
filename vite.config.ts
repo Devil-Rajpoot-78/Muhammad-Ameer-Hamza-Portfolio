@@ -3,6 +3,9 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 
 export default defineConfig({
+  // GitHub Pages serves this repository as a project site:
+  // https://devil-rajpoot-78.github.io/Muhammad-Ameer-Hamza-Portfolio/
+  base: '/Muhammad-Ameer-Hamza-Portfolio/',
   plugins: [react()],
   resolve: {
     alias: {
