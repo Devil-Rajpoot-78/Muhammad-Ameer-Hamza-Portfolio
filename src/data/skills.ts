@@ -1,7 +1,6 @@
-import { Skill } from '@types/index';
+import { Skill } from '../types';
 
 export const skills: Skill[] = [
-  // 3D & Design
   { name: 'Blender', category: '3D', proficiency: 'advanced' },
   { name: '3D Modeling', category: '3D', proficiency: 'advanced' },
   { name: '3D Animation', category: '3D', proficiency: 'advanced' },
@@ -12,16 +11,12 @@ export const skills: Skill[] = [
   { name: 'UV Mapping', category: '3D', proficiency: 'intermediate' },
   { name: 'Substance 3D Painter', category: '3D', proficiency: 'intermediate' },
   { name: 'Geometry Nodes', category: '3D', proficiency: 'advanced' },
-  
-  // WebGL & Graphics
   { name: 'WebGL', category: 'Graphics', proficiency: 'advanced' },
   { name: 'GLSL Shader Programming', category: 'Graphics', proficiency: 'advanced' },
   { name: 'Three.js', category: 'Graphics', proficiency: 'expert' },
   { name: 'React Three Fiber', category: 'Graphics', proficiency: 'expert' },
   { name: 'Drei', category: 'Graphics', proficiency: 'advanced' },
   { name: 'Graphics Optimization', category: 'Graphics', proficiency: 'intermediate' },
-  
-  // Web Development
   { name: 'React', category: 'Web', proficiency: 'expert' },
   { name: 'TypeScript', category: 'Web', proficiency: 'expert' },
   { name: 'JavaScript', category: 'Web', proficiency: 'expert' },
@@ -33,36 +28,26 @@ export const skills: Skill[] = [
   { name: 'Responsive Design', category: 'Web', proficiency: 'expert' },
   { name: 'Web Performance', category: 'Web', proficiency: 'intermediate' },
   { name: 'SEO', category: 'Web', proficiency: 'intermediate' },
-  
-  // Animation & Motion
   { name: 'Framer Motion', category: 'Animation', proficiency: 'advanced' },
   { name: 'GSAP', category: 'Animation', proficiency: 'intermediate' },
   { name: 'CSS Animations', category: 'Animation', proficiency: 'advanced' },
   { name: 'Motion Design', category: 'Animation', proficiency: 'advanced' },
-  
-  // Game Development
   { name: 'Unity', category: 'Game Dev', proficiency: 'intermediate' },
   { name: 'C#', category: 'Game Dev', proficiency: 'intermediate' },
   { name: 'Game Physics', category: 'Game Dev', proficiency: 'intermediate' },
   { name: 'Level Design', category: 'Game Dev', proficiency: 'intermediate' },
   { name: 'Shader Graph', category: 'Game Dev', proficiency: 'intermediate' },
-  
-  // Software Development
   { name: 'Python', category: 'Software', proficiency: 'advanced' },
   { name: 'Java', category: 'Software', proficiency: 'intermediate' },
   { name: 'C++', category: 'Software', proficiency: 'intermediate' },
   { name: 'Git & GitHub', category: 'Software', proficiency: 'expert' },
   { name: 'REST APIs', category: 'Software', proficiency: 'advanced' },
   { name: 'Database Design', category: 'Software', proficiency: 'intermediate' },
-  
-  // Android Development
   { name: 'Android Studio', category: 'Mobile', proficiency: 'advanced' },
   { name: 'Native Android', category: 'Mobile', proficiency: 'advanced' },
   { name: 'Firebase', category: 'Mobile', proficiency: 'intermediate' },
   { name: 'SQLite', category: 'Mobile', proficiency: 'intermediate' },
   { name: 'ARCore', category: 'Mobile', proficiency: 'intermediate' },
-  
-  // Robotics & Engineering
   { name: 'Embedded Systems', category: 'Robotics', proficiency: 'advanced' },
   { name: 'ESP32', category: 'Robotics', proficiency: 'advanced' },
   { name: 'Arduino', category: 'Robotics', proficiency: 'advanced' },
@@ -72,14 +57,10 @@ export const skills: Skill[] = [
   { name: 'Circuit Design', category: 'Robotics', proficiency: 'intermediate' },
   { name: 'MATLAB', category: 'Robotics', proficiency: 'intermediate' },
   { name: 'Signal Processing', category: 'Robotics', proficiency: 'intermediate' },
-  
-  // AI & Creative Tech
   { name: 'Prompt Engineering', category: 'AI', proficiency: 'advanced' },
   { name: 'Stable Diffusion', category: 'AI', proficiency: 'intermediate' },
   { name: 'Midjourney', category: 'AI', proficiency: 'intermediate' },
   { name: 'AI-Assisted Workflows', category: 'AI', proficiency: 'advanced' },
-  
-  // Tools & Software
   { name: 'Figma', category: 'Tools', proficiency: 'intermediate' },
   { name: 'Adobe Creative Suite', category: 'Tools', proficiency: 'intermediate' },
   { name: 'VS Code', category: 'Tools', proficiency: 'expert' },
