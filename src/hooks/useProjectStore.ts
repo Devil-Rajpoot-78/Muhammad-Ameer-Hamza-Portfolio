@@ -1,6 +1,6 @@
 import { create } from 'zustand';
-import { Project, ProjectCategory } from '@types/index';
-import { projects } from '@data/projects';
+import { Project, ProjectCategory } from '../types';
+import { projects } from '../data/projects';
 
 interface ProjectStore {
   projects: Project[];
@@ -17,28 +17,20 @@ export const useProjectStore = create<ProjectStore>((set, get) => ({
   filteredProjects: projects,
   selectedCategory: 'all',
   searchQuery: '',
-  
-  setCategory: (category: ProjectCategory) => {
+  setCategory: (category) => {
     set({ selectedCategory: category });
     set({ filteredProjects: get().getFilteredProjects() });
   },
-  
-  setSearchQuery: (query: string) => {
+  setSearchQuery: (query) => {
     set({ searchQuery: query });
     set({ filteredProjects: get().getFilteredProjects() });
   },
-  
   getFilteredProjects: () => {
     const { selectedCategory, searchQuery, projects } = get();
-    
-    return projects.filter(project => {
+    const query = searchQuery.toLowerCase();
+    return projects.filter((project) => {
       const matchesCategory = selectedCategory === 'all' || project.category.includes(selectedCategory);
-      const matchesSearch = searchQuery === '' || 
-        project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        project.shortDescription.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        project.technologies.some(t => t.toLowerCase().includes(searchQuery.toLowerCase())) ||
-        project.skills.some(s => s.toLowerCase().includes(searchQuery.toLowerCase()));
-      
+      const matchesSearch = query === '' || project.title.toLowerCase().includes(query) || project.shortDescription.toLowerCase().includes(query) || project.technologies.some((t) => t.toLowerCase().includes(query)) || project.skills.some((s) => s.toLowerCase().includes(query));
       return matchesCategory && matchesSearch;
     });
   },
