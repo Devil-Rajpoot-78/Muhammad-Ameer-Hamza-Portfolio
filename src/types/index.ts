@@ -1,6 +1,6 @@
-export type ProjectStatus = 'completed' | 'in-progress' | 'prototype' | 'experiment' | 'academic' | 'archived';
+export type ProjectStatus = 'completed' | 'in-progress' | 'prototype' | 'experiment' | 'academic' | 'archived' | 'open-source';
 
-export type ProjectCategory = 
+export type ProjectCategory =
   | 'all'
   | '3d'
   | 'blender'
@@ -14,7 +14,8 @@ export type ProjectCategory =
   | 'robotics'
   | 'engineering'
   | 'ai'
-  | 'experiments';
+  | 'experiments'
+  | 'open-source';
 
 export type Proficiency = 'beginner' | 'intermediate' | 'advanced' | 'expert';
 
@@ -25,6 +26,7 @@ export type ExperienceType = 'project' | 'education' | 'work' | 'certification';
 export interface ProjectImage {
   url: string;
   alt: string;
+  caption?: string;
 }
 
 export interface ProjectLink {
@@ -52,6 +54,17 @@ export interface Project {
     label: string;
     value: string;
   }[];
+}
+
+export interface Profile {
+  name: string;
+  title: string;
+  description: string;
+  email: string;
+  phone?: string;
+  whatsapp?: string;
+  github?: string;
+  location?: string;
 }
 
 export interface Skill {
