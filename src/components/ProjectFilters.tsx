@@ -1,5 +1,5 @@
 import { useProjectStore } from '@hooks/index';
-import { ProjectCategory } from '@types/index';
+import { ProjectCategory } from '../types';
 
 const categories: { value: ProjectCategory; label: string }[] = [
   { value: 'all', label: 'All Projects' },
@@ -16,23 +16,15 @@ const categories: { value: ProjectCategory; label: string }[] = [
   { value: 'engineering', label: 'Engineering' },
   { value: 'ai', label: 'AI' },
   { value: 'experiments', label: 'Experiments' },
+  { value: 'open-source', label: 'Open Source' },
 ];
 
 export const ProjectFilters = () => {
   const { selectedCategory, setCategory } = useProjectStore();
-
   return (
     <div className="flex flex-wrap gap-2 mb-8">
       {categories.map((cat) => (
-        <button
-          key={cat.value}
-          onClick={() => setCategory(cat.value)}
-          className={`px-4 py-2 rounded-full text-sm font-medium transition ${
-            selectedCategory === cat.value
-              ? 'bg-white text-black'
-              : 'bg-gray-900 text-gray-300 hover:bg-gray-800 hover:text-white border border-gray-700'
-          }`}
-        >
+        <button key={cat.value} onClick={() => setCategory(cat.value)} className={`px-4 py-2 rounded-full text-sm font-medium transition ${selectedCategory === cat.value ? 'bg-white text-black' : 'bg-gray-900 text-gray-300 hover:bg-gray-800 hover:text-white border border-gray-700'}`}>
           {cat.label}
         </button>
       ))}
