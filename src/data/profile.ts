@@ -1,4 +1,4 @@
-import { Profile } from '@types/index';
+import { Profile } from '../types';
 
 export const profile: Profile = {
   name: 'Muhammad Ameer Hamza',
