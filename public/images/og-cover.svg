@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0a0a0c"/>
+  <circle cx="600" cy="315" r="220" fill="none" stroke="#24242b" stroke-width="1"/>
+  <circle cx="600" cy="315" r="150" fill="none" stroke="#35353f" stroke-width="1.5"/>
+  <circle cx="600" cy="315" r="40" fill="#d8ff3f"/>
+  <text x="600" y="470" text-anchor="middle" font-family="monospace" font-size="14" fill="#9a9aa6" letter-spacing="4">MUHAMMAD AMEER HAMZA</text>
+  <text x="600" y="500" text-anchor="middle" font-family="monospace" font-size="12" fill="#66666f" letter-spacing="2">3D · SOFTWARE · ENGINEERING · ROBOTICS · AI</text>
+</svg>
