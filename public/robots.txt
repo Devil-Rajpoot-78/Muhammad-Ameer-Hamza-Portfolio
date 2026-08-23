@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://devil-rajpoot-78.github.io/Muhammad-Ameer-Hamza-Portfolio/sitemap.xml
